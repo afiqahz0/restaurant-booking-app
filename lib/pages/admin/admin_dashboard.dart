@@ -12,7 +12,7 @@ class AdminDashboardPage extends StatefulWidget {
 class _AdminDashboardPageState extends State<AdminDashboardPage> {
   bool _showMenu = false;
 
-  // MATCH THEME
+  // THEME
   static const Color bgLight = Color(0xFFFCE4EC);
   static const Color primaryPink = Color(0xFFF06292);
   static const Color darkPink = Color(0xFF880E4F);

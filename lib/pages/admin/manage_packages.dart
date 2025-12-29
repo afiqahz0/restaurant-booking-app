@@ -227,7 +227,7 @@ class _ManagePackagesPageState extends State<ManagePackagesPage> {
   }
 }
 
-// ================= CORRECTED PACKAGE CARD =================
+// ================= PACKAGE CARD =================
 class PackageRowCard extends StatelessWidget {
   final String name;
   final String imageUrl;
@@ -318,7 +318,7 @@ class PackageRowCard extends StatelessWidget {
   }
 }
 
-// SideNavItem code remains same as before...
+// SideNavItem
 class _NavItem extends StatelessWidget {
   final String title;
   final IconData icon;

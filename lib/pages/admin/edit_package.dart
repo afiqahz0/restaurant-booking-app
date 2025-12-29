@@ -27,7 +27,7 @@ class _EditPackagePageState extends State<EditPackagePage> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController descController = TextEditingController();
   final TextEditingController priceController = TextEditingController();
-  final TextEditingController imageUrlController = TextEditingController(); // ✅ Added
+  final TextEditingController imageUrlController = TextEditingController();
 
   // MEAL TYPE
   String selectedMealType = 'Breakfast';
