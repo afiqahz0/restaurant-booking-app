@@ -48,7 +48,7 @@ class _RegisterPageState extends State<RegisterPage> {
       return;
     }
 
-    // 🔐 Admin authentication check
+    // Admin authentication check
     if (_selectedRole == 'Admin' &&
         _adminAuthController.text.trim() != ADMIN_AUTH_PASSWORD) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -62,7 +62,7 @@ class _RegisterPageState extends State<RegisterPage> {
     try {
       setState(() => _loading = true);
 
-      // 1️⃣ Firebase Auth
+      // Firebase Auth
       final userCredential =
       await _auth.createUserWithEmailAndPassword(
         email: _emailController.text.trim(),
@@ -71,7 +71,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
       final uid = userCredential.user!.uid;
 
-      // 2️⃣ Firestore user record
+      // Firestore user record
       await _firestore.collection('users').doc(uid).set({
         'fullName': _nameController.text.trim(),
         'email': _emailController.text.trim(),
@@ -79,7 +79,7 @@ class _RegisterPageState extends State<RegisterPage> {
         'createdAt': Timestamp.now(),
       });
 
-      // 3️⃣ Redirect
+      // Redirect
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -174,7 +174,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 20),
 
-              // 🔐 ADMIN AUTH FIELD
+              // ADMIN AUTH FIELD
               if (_selectedRole == 'Admin') ...[
                 _buildLabel("Admin Authentication Password"),
                 TextField(

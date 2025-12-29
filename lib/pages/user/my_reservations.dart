@@ -183,7 +183,7 @@ class _ReservationCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                // 👁️ VIEW DETAILS BUTTON
+                // VIEW DETAILS BUTTON
                 TextButton.icon(
                   onPressed: () {
                     context.go('/user/reservations/view/$reservationId');
@@ -195,7 +195,7 @@ class _ReservationCard extends StatelessWidget {
                   ),
                 ),
 
-                // ✏️ EDIT BUTTON (Hidden if cancelled)
+                // EDIT BUTTON (Hidden if cancelled)
                 if (status != 'Cancelled') ...[
                   const SizedBox(width: 8),
                   TextButton.icon(

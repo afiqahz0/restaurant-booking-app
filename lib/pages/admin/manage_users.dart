@@ -12,16 +12,16 @@ class ManageUsersPage extends StatefulWidget {
 class _ManageUsersPageState extends State<ManageUsersPage> {
   bool _showMenu = false;
   String _searchQuery = '';
-  String _selectedRole = 'All'; // ✅ Added for role filter
+  String _selectedRole = 'All'; //
 
-  // 🌸 MATCH LOGIN / REGISTER THEME
+  //  THEME
   static const Color bgLight = Color(0xFFFCE4EC);
   static const Color primaryPink = Color(0xFFF06292);
   static const Color darkPink = Color(0xFF880E4F);
 
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  // 🔥 DELETE USER (Firestore only)
+  //  DELETE USER
   Future<void> _deleteUser(String userId) async {
     try {
       await _firestore.collection('users').doc(userId).delete();
@@ -97,7 +97,7 @@ class _ManageUsersPageState extends State<ManageUsersPage> {
                       ),
                     ),
                     const SizedBox(width: 10),
-                    // ✅ ROLE FILTER DROPDOWN
+                    //  ROLE FILTER DROPDOWN
                     Expanded(
                       flex: 1,
                       child: Container(
@@ -150,7 +150,7 @@ class _ManageUsersPageState extends State<ManageUsersPage> {
                         );
                       }
 
-                      // ✅ COMBINED FILTER: Search + Role
+                      // COMBINED FILTER: Search + Role
                       final users = snapshot.data!.docs.where((doc) {
                         final data = doc.data() as Map<String, dynamic>;
                         final name =

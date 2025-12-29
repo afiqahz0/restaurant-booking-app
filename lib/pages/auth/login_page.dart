@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
     try {
       setState(() => _loading = true);
 
-      // 1️⃣ Firebase Auth login
+      // Firebase Auth login
       final credential = await _auth.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
 
       final uid = credential.user!.uid;
 
-      // 2️⃣ Fetch user role from Firestore
+      // Fetch user role from Firestore
       final doc = await _firestore.collection('users').doc(uid).get();
 
       if (!doc.exists) {
@@ -52,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
 
       final role = doc['role'];
 
-      // 🚫 BLOCK ADMIN LOGIN HERE
+      // BLOCK ADMIN LOGIN HERE
       if (role != 'customer') {
         await _auth.signOut();
 
@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
         return;
       }
 
-      // ✅ USER ONLY
+      // USER ONLY
       if (mounted) {
         context.go('/dashboard');
       }

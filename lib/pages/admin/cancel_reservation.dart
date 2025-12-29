@@ -20,7 +20,7 @@ class _CancelReservationPageState
   bool _showMenu = false;
   bool _loading = false;
 
-  // 🌸 THEME (match login/register)
+  // THEME
   static const Color bgLight = Color(0xFFFCE4EC);
   static const Color primaryPink = Color(0xFFF06292);
 

@@ -36,7 +36,7 @@ import 'pages/admin/cancel_reservation.dart';
 final router = GoRouter(
   routes: [
 
-    // 🔥 START PAGE (GUEST)
+    // START PAGE (GUEST)
     GoRoute(
       path: '/',
       builder: (context, state) => const GuestLandingPage(),
@@ -87,10 +87,10 @@ final router = GoRouter(
     ),
 
     GoRoute(
-      path: '/booking/success/:id', // ✅ Pass ID in the URL
+      path: '/booking/success/:id',
       builder: (context, state) {
         final id = state.pathParameters['id']!;
-        return BookingSuccessPage(reservationId: id); // ✅ Pass only the ID
+        return BookingSuccessPage(reservationId: id);
       },
     ),
 

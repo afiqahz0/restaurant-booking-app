@@ -8,7 +8,7 @@ class UserViewReservationPage extends StatelessWidget {
 
   const UserViewReservationPage({super.key, required this.reservationId});
 
-  // 🌸 THEME COLORS
+  // THEME COLORS
   static const Color bgLight = Color(0xFFFCE4EC);
   static const Color primaryPink = Color(0xFFF06292);
   static const Color darkPink = Color(0xFF880E4F);

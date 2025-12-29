@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
 
 class BookingSuccessPage extends StatelessWidget {
-  final String reservationId; // ✅ Only expect the ID
+  final String reservationId;
 
   const BookingSuccessPage({super.key, required this.reservationId});
 
@@ -17,7 +17,7 @@ class BookingSuccessPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: bgLight,
       body: FutureBuilder<DocumentSnapshot>(
-        // ✅ Fetch data directly from Firestore
+        // Fetch data directly from Firestore
         future: FirebaseFirestore.instance
             .collection('reservations')
             .doc(reservationId)

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cached_network_image/cached_network_image.dart'; // ✅ Don't forget this import
+import 'package:cached_network_image/cached_network_image.dart';
 
 class GuestLandingPage extends StatelessWidget {
   const GuestLandingPage({super.key});
@@ -129,7 +129,7 @@ class GuestLandingPage extends StatelessWidget {
                       return _PackageCard(
                         name: data['packageName'] ?? 'Package',
                         price: data['pricePerGuest'] ?? 0,
-                        imageUrl: data['imageUrl'] ?? '', // ✅ PASS URL
+                        imageUrl: data['imageUrl'] ?? '', //
                         onTap: () => context.push('/package/${pkg.id}'),
                       );
                     },
@@ -148,7 +148,7 @@ class GuestLandingPage extends StatelessWidget {
 class _PackageCard extends StatelessWidget {
   final String name;
   final num price;
-  final String imageUrl; // ✅ ADDED IMAGE URL
+  final String imageUrl; //
   final VoidCallback onTap;
 
   const _PackageCard({

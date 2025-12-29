@@ -13,11 +13,11 @@ class ManagePackagesPage extends StatefulWidget {
 class _ManagePackagesPageState extends State<ManagePackagesPage> {
   bool _showMenu = false;
 
-  // 🔍 FILTER & SEARCH STATES
+  //  FILTER & SEARCH STATES
   String _selectedMealType = 'All';
   String _selectedStatus = 'All';
-  final TextEditingController _searchController = TextEditingController(); // ✅ Added
-  String _searchQuery = ""; // ✅ Added
+  final TextEditingController _searchController = TextEditingController();
+  String _searchQuery = "";
 
   static const Color bgLight = Color(0xFFFCE4EC);
   static const Color primaryPink = Color(0xFFF06292);
@@ -66,7 +66,7 @@ class _ManagePackagesPageState extends State<ManagePackagesPage> {
 
                 const SizedBox(height: 15),
 
-                // ✅ SEARCH BAR
+                // SEARCH BAR
                 TextField(
                   controller: _searchController,
                   onChanged: (value) {
@@ -144,7 +144,7 @@ class _ManagePackagesPageState extends State<ManagePackagesPage> {
                         return const Center(child: Text('No packages found'));
                       }
 
-                      // ✅ COMBINED FILTER & SEARCH LOGIC
+                      // COMBINED FILTER & SEARCH LOGIC
                       final filteredDocs = snapshot.data!.docs.where((doc) {
                         final data = doc.data() as Map<String, dynamic>;
                         final name = (data['packageName'] ?? '').toString().toLowerCase();

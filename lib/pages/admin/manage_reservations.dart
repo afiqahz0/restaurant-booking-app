@@ -15,7 +15,7 @@ class _ManageReservationsPageState extends State<ManageReservationsPage> {
   String searchQuery = '';
   String selectedStatus = 'All';
 
-  // 🌸 THEME
+  // THEME
   static const Color bgLight = Color(0xFFFCE4EC);
   static const Color primaryPink = Color(0xFFF06292);
   static const Color darkPink = Color(0xFF880E4F);
@@ -316,7 +316,7 @@ class ReservationCard extends StatelessWidget {
                 ],
               ),
             ),
-            // ✅ ACTION ICONS
+            //  ACTION ICONS
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [

@@ -12,14 +12,14 @@ class AdminDashboardPage extends StatefulWidget {
 class _AdminDashboardPageState extends State<AdminDashboardPage> {
   bool _showMenu = false;
 
-  // 🌸 MATCH THEME COLORS
+  // MATCH THEME
   static const Color bgLight = Color(0xFFFCE4EC);
   static const Color primaryPink = Color(0xFFF06292);
   static const Color darkPink = Color(0xFF880E4F);
 
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  // ✅ HELPER FOR STATUS COLORS
+  // HELPER FOR STATUS COLORS
   Color _getStatusColor(String status) {
     switch (status) {
       case 'Confirmed':
@@ -151,7 +151,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                             subtitle: Text(
                               status,
                               style: TextStyle(
-                                color: _getStatusColor(status), // ✅ APPLYING FIX HERE
+                                color: _getStatusColor(status), //
                                 fontWeight: FontWeight.bold,
                               ),
                             ),

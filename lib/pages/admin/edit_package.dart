@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cached_network_image/cached_network_image.dart'; // ✅ Added
+import 'package:cached_network_image/cached_network_image.dart'; //
 
 class EditPackagePage extends StatefulWidget {
   final String packageId;
@@ -19,7 +19,7 @@ class _EditPackagePageState extends State<EditPackagePage> {
   bool _loading = true;
   bool _isSaving = false;
 
-  // 🌸 THEME
+  // THEME
   static const Color primaryPink = Color(0xFFF06292);
   static const Color bgLight = Color(0xFFFCE4EC);
   static const Color darkText = Color(0xFF880E4F);
@@ -29,7 +29,7 @@ class _EditPackagePageState extends State<EditPackagePage> {
   final TextEditingController priceController = TextEditingController();
   final TextEditingController imageUrlController = TextEditingController(); // ✅ Added
 
-  // ✅ MEAL TYPE
+  // MEAL TYPE
   String selectedMealType = 'Breakfast';
   final List<String> mealTypes = [
     'Breakfast',
@@ -58,7 +58,7 @@ class _EditPackagePageState extends State<EditPackagePage> {
           nameController.text = data['packageName'] ?? '';
           descController.text = data['description'] ?? '';
           priceController.text = (data['pricePerGuest'] ?? '').toString();
-          imageUrlController.text = data['imageUrl'] ?? ''; // ✅ Load URL
+          imageUrlController.text = data['imageUrl'] ?? ''; //
           selectedMealType = data['mealType'] ?? 'Breakfast';
         });
       }
@@ -76,7 +76,7 @@ class _EditPackagePageState extends State<EditPackagePage> {
     if (nameController.text.isEmpty ||
         descController.text.isEmpty ||
         priceController.text.isEmpty ||
-        imageUrlController.text.isEmpty) { // ✅ Validate URL
+        imageUrlController.text.isEmpty) { //
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Please fill in all fields')),
       );
@@ -92,7 +92,7 @@ class _EditPackagePageState extends State<EditPackagePage> {
         'packageName': nameController.text.trim(),
         'description': descController.text.trim(),
         'pricePerGuest': double.parse(priceController.text.trim()),
-        'imageUrl': imageUrlController.text.trim(), // ✅ Update URL
+        'imageUrl': imageUrlController.text.trim(), //
         'mealType': selectedMealType,
         'updatedAt': Timestamp.now(),
       });

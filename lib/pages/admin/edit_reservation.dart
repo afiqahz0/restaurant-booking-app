@@ -19,7 +19,7 @@ class _EditReservationPageState extends State<EditReservationPage> {
   bool _showMenu = false;
   bool _loading = true;
 
-  // 🌸 THEME
+  // THEME
   static const Color bgLight = Color(0xFFFCE4EC);
   static const Color primaryPink = Color(0xFFF06292);
   static const Color darkPink = Color(0xFF880E4F);

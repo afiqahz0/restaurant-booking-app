@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cached_network_image/cached_network_image.dart'; // ✅ Added
+import 'package:cached_network_image/cached_network_image.dart';
 
 class UserDashboardPage extends StatefulWidget {
   const UserDashboardPage({super.key});
@@ -12,7 +12,7 @@ class UserDashboardPage extends StatefulWidget {
 }
 
 class _UserDashboardPageState extends State<UserDashboardPage> {
-  // 🌸 THEME COLORS
+  // THEME COLORS
   final Color kBackgroundColor = const Color(0xFFFCE4EC);
   final Color kPrimaryColor = const Color(0xFFF06292);
   final Color kTextColor = const Color(0xFF880E4F);
@@ -121,7 +121,7 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
                     return _PackageCard(
                       name: data['packageName'] ?? 'Package',
                       price: data['pricePerGuest'] ?? 0,
-                      imageUrl: data['imageUrl'] ?? '', // ✅ PASS IMAGE URL
+                      imageUrl: data['imageUrl'] ?? '',
                       onTap: () {
                         context.push('/user/package/${pkg.id}');
                       },
@@ -249,7 +249,7 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
 class _PackageCard extends StatelessWidget {
   final String name;
   final num price;
-  final String imageUrl; // ✅ Added
+  final String imageUrl;
   final VoidCallback onTap;
 
   const _PackageCard({

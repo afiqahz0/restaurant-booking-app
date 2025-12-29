@@ -13,7 +13,7 @@ class AddPackagePage extends StatefulWidget {
 class _AddPackagePageState extends State<AddPackagePage> {
   bool _loading = false;
 
-  // 🌸 THEME
+  // THEME
   final Color bgLight = const Color(0xFFFCE4EC);
   final Color primaryPink = const Color(0xFFF06292);
   final Color darkPink = const Color(0xFF880E4F);
@@ -25,7 +25,7 @@ class _AddPackagePageState extends State<AddPackagePage> {
 
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  // 🍽️ MEAL TYPE
+  // MEAL TYPE
   String selectedMealType = 'Breakfast';
   final List<String> mealTypes = [
     'Breakfast',
@@ -54,7 +54,7 @@ class _AddPackagePageState extends State<AddPackagePage> {
         'description': descController.text.trim(),
         'pricePerGuest': double.parse(priceController.text.trim()),
         'mealType': selectedMealType,
-        'imageUrl': imageUrlController.text.trim(), // ✅ PUBLIC IMAGE URL
+        'imageUrl': imageUrlController.text.trim(),
         'isActive': true,
         'createdAt': Timestamp.now(),
       });
@@ -103,10 +103,10 @@ class _AddPackagePageState extends State<AddPackagePage> {
             ),
             const SizedBox(height: 20),
 
-// 🖼 IMAGE PREVIEW
+// IMAGE PREVIEW
             Container(
               height: 160,
-              clipBehavior: Clip.antiAlias, // Ensures image corners are rounded
+              clipBehavior: Clip.antiAlias,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),

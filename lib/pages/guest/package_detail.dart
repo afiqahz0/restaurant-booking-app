@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cached_network_image/cached_network_image.dart'; // ✅ Added
+import 'package:cached_network_image/cached_network_image.dart'; //
 
 class PackageDetailPage extends StatelessWidget {
   final String packageId;
@@ -11,7 +11,7 @@ class PackageDetailPage extends StatelessWidget {
     required this.packageId,
   });
 
-  // 🌸 THEME
+  // THEME
   static const Color bgPink = Color(0xFFFCE4EC);
   static const Color primaryPink = Color(0xFFF06292);
   static const Color burgundy = Color(0xFF880E4F);
@@ -20,7 +20,6 @@ class PackageDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgPink,
-      // We extend the body behind the AppBar for a more modern look
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent, // Transparent to see the image
@@ -50,7 +49,7 @@ class PackageDetailPage extends StatelessWidget {
           final String name = data['packageName'] ?? 'Package';
           final String description = data['description'] ?? '';
           final num price = data['pricePerGuest'] ?? 0;
-          final String imageUrl = data['imageUrl'] ?? ''; // ✅ Fetch Image URL
+          final String imageUrl = data['imageUrl'] ?? '';
 
           return Column(
             children: [

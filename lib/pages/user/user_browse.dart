@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cached_network_image/cached_network_image.dart'; // ✅ Added
+import 'package:cached_network_image/cached_network_image.dart';
 
 class UserBrowsePage extends StatefulWidget {
   const UserBrowsePage({super.key});
@@ -11,7 +11,7 @@ class UserBrowsePage extends StatefulWidget {
 }
 
 class _UserBrowsePageState extends State<UserBrowsePage> {
-  // 🌸 THEME
+  // THEME
   static const Color bgLight = Color(0xFFFCE4EC);
   static const Color primaryPink = Color(0xFFF06292);
   static const Color darkPink = Color(0xFF880E4F);
@@ -49,7 +49,7 @@ class _UserBrowsePageState extends State<UserBrowsePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🔍 SEARCH BAR
+            // SEARCH BAR
             Container(
               margin: const EdgeInsets.only(bottom: 12),
               decoration: BoxDecoration(
@@ -76,7 +76,7 @@ class _UserBrowsePageState extends State<UserBrowsePage> {
               ),
             ),
 
-            // 🍽 MEAL TYPE FILTER
+            // MEAL TYPE FILTER
             Container(
               margin: const EdgeInsets.only(bottom: 20),
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -104,7 +104,7 @@ class _UserBrowsePageState extends State<UserBrowsePage> {
               ),
             ),
 
-            // 📦 PACKAGE GRID
+            // PACKAGE GRID
             Expanded(
               child: StreamBuilder<QuerySnapshot>(
                 stream: FirebaseFirestore.instance
@@ -149,7 +149,7 @@ class _UserBrowsePageState extends State<UserBrowsePage> {
                         name: data['packageName'] ?? 'Unnamed',
                         price: data['pricePerGuest'] ?? 0,
                         mealType: data['mealType'] ?? '',
-                        imageUrl: data['imageUrl'] ?? '', // ✅ PASS URL
+                        imageUrl: data['imageUrl'] ?? '',
                         onTap: () => context.push('/user/package/${pkg.id}'),
                       );
                     },
@@ -169,7 +169,7 @@ class _PackageCard extends StatelessWidget {
   final String name;
   final num price;
   final String mealType;
-  final String imageUrl; // ✅ Added
+  final String imageUrl;
   final VoidCallback onTap;
 
   const _PackageCard({

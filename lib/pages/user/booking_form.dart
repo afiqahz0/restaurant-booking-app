@@ -17,7 +17,7 @@ class BookingFormPage extends StatefulWidget {
 }
 
 class _BookingFormPageState extends State<BookingFormPage> {
-  // 🌸 THEME
+  // THEME
   static const Color bgLight = Color(0xFFFCE4EC);
   static const Color primaryPink = Color(0xFFF06292);
   static const Color darkPink = Color(0xFF880E4F);
@@ -164,10 +164,9 @@ class _BookingFormPageState extends State<BookingFormPage> {
 
     final user = FirebaseAuth.instance.currentUser;
 
-    // ✅ 1. Generate a Document Reference first to get the unique ID
     final docRef = FirebaseFirestore.instance.collection('reservations').doc();
 
-      // ✅ 3. Save to Firestore using the generated ID
+
       await docRef.set({
         'reservationId': docRef.id,
         'userId': user?.uid,
@@ -187,7 +186,7 @@ class _BookingFormPageState extends State<BookingFormPage> {
 
       if (!mounted) return;
 
-      // ✅ 4. Navigate to success page and pass the summary data
+
       context.go('/booking/success/${docRef.id}');
 
   }

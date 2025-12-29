@@ -20,7 +20,7 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  // 🌸 THEME
+  // THEME
   final Color kBackgroundColor = const Color(0xFFFCE4EC);
   final Color kPrimaryPink = const Color(0xFFF06292);
   final Color kPrimaryDark = const Color(0xFF880E4F);
@@ -30,7 +30,7 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
     try {
       setState(() => _loading = true);
 
-      // 1️⃣ Firebase Auth login
+      // Firebase Auth login
       final credential = await _auth.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
@@ -38,7 +38,7 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
 
       final uid = credential.user!.uid;
 
-      // 2️⃣ Fetch user role from Firestore
+      // Fetch user role from Firestore
       final userDoc = await _firestore.collection('users').doc(uid).get();
 
       if (!userDoc.exists) {
@@ -48,13 +48,13 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
 
       final role = userDoc['role'];
 
-      // 3️⃣ Check admin role
+      // Check admin role
       if (role != 'admin') {
         await _auth.signOut();
         throw 'Access denied. Admins only.';
       }
 
-      // 4️⃣ Go to admin dashboard
+      // Go to admin dashboard
       if (mounted) {
         context.go('/admin');
       }

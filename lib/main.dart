@@ -5,7 +5,7 @@ import 'app_router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); // 🔥 THIS IS THE KEY LINE
+  await Firebase.initializeApp();
   runApp(const ProviderScope(child: MyApp()));
 }
 
