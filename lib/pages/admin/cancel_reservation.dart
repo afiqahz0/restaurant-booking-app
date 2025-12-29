@@ -27,7 +27,7 @@ class _CancelReservationPageState
   final FirebaseFirestore _firestore =
       FirebaseFirestore.instance;
 
-  // 🔥 DELETE RESERVATION
+  // DELETE RESERVATION
   Future<void> _cancelReservation() async {
     try {
       setState(() => _loading = true);
